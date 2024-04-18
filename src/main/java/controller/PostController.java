@@ -3,6 +3,7 @@ package controller;
 import com.google.gson.Gson;
 import model.Post;
 import service.PostService;
+import servlet.MainServlet;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -10,11 +11,7 @@ import java.io.Reader;
 
 public class PostController {
     private final PostService service;
-    public static final String APPLICATION_JSON = "application/json";
-    public static final String POSTS_PATH = "/api/posts";
-    public static final String GET_METHOD = "GET";
-    public static final String POST_METHOD = "POST";
-    public static final String DELETE_METHOD = "DELETE";
+    private final String APPLICATION_JSON = "application/json";
 
     public PostController(PostService service) {
         this.service = service;

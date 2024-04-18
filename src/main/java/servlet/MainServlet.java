@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MainServlet extends HttpServlet {
     private PostController controller;
+    private final String POSTS_PATH = "/api/posts";
+    private final String GET_METHOD = "GET";
+    private final String POST_METHOD = "POST";
+    private final String DELETE_METHOD = "DELETE";
 
     @Override
     public void init() {
@@ -25,26 +29,26 @@ public class MainServlet extends HttpServlet {
             final var path = req.getRequestURI();
             final var method = req.getMethod();
             switch (method) {
-                case PostController.GET_METHOD:
-                    if (path.equals(PostController.POSTS_PATH)) {
+                case GET_METHOD:
+                    if (path.equals(POSTS_PATH)) {
                         controller.all(resp);
-                    } else if (path.matches(PostController.POSTS_PATH + "/\\d+")) {
+                    } else if (path.matches(POSTS_PATH + "/\\d+")) {
                         final var id = Long.parseLong(path.substring(path.lastIndexOf("/")));
                         controller.getById(id, resp);
                     } else {
                         resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                     }
                     break;
-                case PostController.POST_METHOD:
-                    if (path.equals(PostController.POSTS_PATH)) {
+                case POST_METHOD:
+                    if (path.equals(POSTS_PATH)) {
                         controller.save(req.getReader(), resp);
                     } else {
                         resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
                     }
                     break;
 
-                case PostController.DELETE_METHOD:
-                    if (path.matches(PostController.POSTS_PATH + "/\\d+")) {
+                case DELETE_METHOD:
+                    if (path.matches(POSTS_PATH + "/\\d+")) {
                         final var id = Long.parseLong(path.substring(path.lastIndexOf("/")));
                         controller.removeById(id, resp);
                     } else {
