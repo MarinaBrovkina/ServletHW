@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>main</servlet-name>
-    <servlet-class>servlet.MainServlet</servlet-class>
+    <servlet-class>Main</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -18,7 +18,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>MainServlet</welcome-file>
+    <welcome-file>Main</welcome-file>
   </welcome-file-list>
 
 </web-app>
