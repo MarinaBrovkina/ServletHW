@@ -2,8 +2,6 @@ package servlet;
 
 import controller.PostController;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import repository.PostRepository;
 import service.PostService;
 
@@ -12,12 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class MainServlet extends HttpServlet {
-
+    @Autowired
     private PostController controller;
     private final String POSTS_PATH = "/api/posts";
     private final String GET_METHOD = "GET";
     private final String POST_METHOD = "POST";
     private final String DELETE_METHOD = "DELETE";
+
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) {
