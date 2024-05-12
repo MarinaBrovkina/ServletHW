@@ -1,7 +1,6 @@
 package repository;
 
 import model.Post;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
