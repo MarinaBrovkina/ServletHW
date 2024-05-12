@@ -3,7 +3,6 @@ package controller;
 import com.google.gson.Gson;
 import model.Post;
 import service.PostService;
-import servlet.MainServlet;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
