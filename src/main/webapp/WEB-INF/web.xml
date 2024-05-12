@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>main</servlet-name>
-    <servlet-class>Main</servlet-class>
+    <servlet-class>servlet.MainServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
