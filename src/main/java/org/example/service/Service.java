@@ -1,6 +1,6 @@
-package service;
+package org.example.service;
 
-import controller.PostController;
+import org.example.controller.PostController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

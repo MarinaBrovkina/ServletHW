@@ -1,6 +1,6 @@
-package repository;
+package org.example.repository;
 
-import model.Post;
+import org.example.model.Post;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

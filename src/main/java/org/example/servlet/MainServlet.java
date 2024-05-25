@@ -1,9 +1,9 @@
-package servlet;
+package org.example.servlet;
 
-import controller.PostController;
+import org.example.controller.PostController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import service.Service;
+import org.example.service.Service;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +14,7 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        ApplicationContext context = new AnnotationConfigApplicationContext("java");
+        ApplicationContext context = new AnnotationConfigApplicationContext("org.example");
         controller = context.getBean(PostController.class);
     }
 
