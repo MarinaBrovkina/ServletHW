@@ -1,29 +1,22 @@
-package servlet;
+package org.example.service;
 
-import controller.PostController;
-import repository.PostRepository;
-import service.PostService;
+import org.example.controller.PostController;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MainServlet extends HttpServlet {
-    private PostController controller;
+public class Service {
     private final String POSTS_PATH = "/api/posts";
     private final String GET_METHOD = "GET";
     private final String POST_METHOD = "POST";
     private final String DELETE_METHOD = "DELETE";
+    private final PostController controller;
 
-    @Override
-    public void init() {
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);
+    public Service(PostController controller) {
+        this.controller = controller;
     }
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) {
+    public void service(HttpServletRequest req, HttpServletResponse resp) {
 
         try {
             final var path = req.getRequestURI();
@@ -65,4 +58,3 @@ public class MainServlet extends HttpServlet {
         }
     }
 }
-
